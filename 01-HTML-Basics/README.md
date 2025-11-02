@@ -110,7 +110,7 @@ This is a great starting point for anyone learning **web development** or **fron
 
 ## 🖥️ Output Preview
 
-![Output](01-HTML-Basics\image.png)
+![Output](https://github.com/nvvasu7804/HTML_and_CSS_Practice/blob/6d665d30e9cf5bcb174e8145247b764229e10cfb/01-HTML-Basics/image.png)
 
 ---
 
