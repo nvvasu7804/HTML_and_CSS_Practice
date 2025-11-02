@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested Flexbox - Practice</title>
+    <style>
+      * {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      h3,
+      h4 {
+        margin: 10px;
+      }
+
+      body {
+        background-color: #f1f3f4;
+        padding: 20px;
+      }
+
+      .mails-container {
+        width: 600px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        padding: 12px 16px;
+        font-size: 14px;
+        color: #5f6368;
+      }
+
+      .mail-container {
+        display: flex;
+        align-items: flex-start;
+        padding: 15px 16px;
+        border-bottom: 1px solid rgb(202, 202, 202);
+      }
+
+      .profile-pic {
+        margin-right: 16px;
+        flex-shrink: 0;
+      }
+
+      .profile-pic img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .text-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .sender-and-time {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .time {
+        color: gray;
+      }
+
+      .subject {
+        font-size: 15px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .message {
+        font-size: 13px;
+
+        font-weight: bold;
+        color: #5f6368;
+      }
+
+      .twitter-container {
+        width: 440px;
+        padding: 10px;
+        display: flex;
+        align-items: start;
+        background-color: white;
+      }
+      .left {
+        margin-right: 10px;
+      }
+      .left img {
+        height: 50px;
+        border-radius: 50%;
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .user-name {
+        font-weight: bold;
+        display: flex;
+        gap: 5px;
+      }
+      .user-name span {
+        color: gray;
+      }
+      .twitter-message {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        line-height: 20px;
+      }
+      .link-preview {
+        display: flex;
+        align-items: center;
+      }
+      .link-left {
+        background-color: rgb(198, 198, 198);
+        border-radius: 15px 0px 0px 15px;
+        border-top: 1px solid rgb(198, 198, 198);
+        border-bottom: 1px solid rgb(198, 198, 198);
+        border-left: 1px solid rgb(198, 198, 198);
+        height: 100px;
+        width: 100px;
+      }
+      .link-right {
+        padding: 15px;
+        flex: 1;
+        font-size: 16px;
+        height: 70px;
+        line-height: 24px;
+        border-radius: 0px 15px 15px 0px;
+        border-top: 1px solid rgb(198, 198, 198);
+        border-bottom: 1px solid rgb(198, 198, 198);
+        border-right: 1px solid rgb(198, 198, 198);
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Practice Exercises</h3>
+    <h4>1. Gmail Inbox Layout</h4>
+    <div class="mails-container">
+      <div class="header"><p>ALL INBOXES</p></div>
+
+      <!-- card 1 -->
+      <div class="mail-container">
+        <div class="profile-pic">
+          <img src="./profile-pics/dummy-profile-pic.svg" alt="" />
+        </div>
+        <div class="text-container">
+          <div class="sender-and-time">
+            <p>Chewy Promotions</p>
+            <p class="time">4:58 PM</p>
+          </div>
+          <div><p class="subject">Biggest sales of the year!</p></div>
+          <div>
+            <p class="message">
+              Hey there! We're writing to tell you about our Black Friday
+              deals—up to 70% off pet essentials!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="mail-container">
+        <div class="profile-pic">
+          <img src="./profile-pics/dummy-profile-pic.svg" alt="" />
+        </div>
+        <div class="text-container">
+          <div class="sender-and-time">
+            <p>LinkedIn Jobs</p>
+            <p class="time">3:12 PM</p>
+          </div>
+          <div><p class="subject">New jobs that match your profile</p></div>
+          <div>
+            <p class="message">
+              We found 5 new openings for UI/UX Designers in your area. Apply
+              now to get noticed!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+      <div class="mail-container">
+        <div class="profile-pic">
+          <img src="./profile-pics/dummy-profile-pic.svg" alt="" />
+        </div>
+        <div class="text-container">
+          <div class="sender-and-time">
+            <p>Spotify</p>
+            <p class="time">1:45 PM</p>
+          </div>
+          <div><p class="subject">Your 2025 Wrapped is here!</p></div>
+          <div>
+            <p class="message">
+              Discover your top songs, artists, and genres of the year. Share
+              your Wrapped with friends!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 4 -->
+      <div class="mail-container">
+        <div class="profile-pic">
+          <img src="./profile-pics/dummy-profile-pic.svg" alt="" />
+        </div>
+        <div class="text-container">
+          <div class="sender-and-time">
+            <p>Amazon</p>
+            <p class="time">11:30 AM</p>
+          </div>
+          <div><p class="subject">Your order has been shipped</p></div>
+          <div>
+            <p class="message">
+              Your package containing "Noise Buds VS104" is on its way. Expected
+              delivery: Nov 2.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 5 -->
+      <div class="mail-container">
+        <div class="profile-pic">
+          <img src="./profile-pics/dummy-profile-pic.svg" alt="" />
+        </div>
+        <div class="text-container">
+          <div class="sender-and-time">
+            <p>Netflix</p>
+            <p class="time">9:05 AM</p>
+          </div>
+          <div><p class="subject">New releases this weekend</p></div>
+          <div>
+            <p class="message">
+              Don’t miss “The Midnight Heist” and other thrilling premieres
+              dropping this Friday!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4>2. Twitter Design</h4>
+
+    <div class="twitter-container">
+      <div class="left">
+        <img src="./profile-pics/dummy-profile-pic.svg" alt="" />
+      </div>
+      <div class="right">
+        <div class="user-name">
+          <p>unknown</p>
+          <span>&commat;unknown</span>
+        </div>
+        <div class="twitter-message">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam
+            ducimus architecto accusantium omnis rem iste molestiae odio dolorum
+            quaerat voluptas!
+          </p>
+          <div class="link-preview">
+            <div class="link-left"></div>
+            <div class="link-right">
+              <p>youtube.com</p>
+              <p>Backend web development - a complete overview (2021)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

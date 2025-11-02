@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .image {
+        height: 280px;
+      }
+
+      .y-search {
+        font-size: 18px;
+      }
+
+      .corners-image {
+        width: 200px;
+        border-radius: 8px;
+      }
+
+      .square-image {
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+      }
+      .round-image {
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+        border-radius: 100px;
+      }
+      .corner-input {
+        padding: 8px;
+        padding-right: 1px;
+        border-radius: 5px;
+        border-width: 1px;
+      }
+
+      .shadow-input {
+        width: 400px;
+        padding: 10px 0px 10px 10px;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .email {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      .email-input {
+        border-radius: 3px;
+        border-width: 1px;
+        width: 340px;
+      }
+
+      .disclaimer {
+        font-size: 14px;
+      }
+
+      .linkedin-button {
+        background-color: rgb(36, 36, 240);
+        color: white;
+        padding: 10px 135px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+      }
+      .linkedin-button:hover {
+        background-color: rgb(111, 111, 255);
+      }
+      .twitter-profile {
+        height: 40px;
+        vertical-align: middle;
+        width: 40px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-right: 5px;
+      }
+
+      .post-input {
+        border: none;
+        width: 200px;
+        font-size: 15px;
+      }
+
+      .tweet-button {
+        background-color: #1da1f2;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 20px;
+        font-weight: 400;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="image" src="./assets/01.avif" alt="" />
+    <input class="y-search" type="text" placeholder="Search" />
+
+    <h3>Practice Exercise</h3>
+    <h4>1. Rounded Corners</h4>
+    <img class="corners-image" src="./assets/image.png" alt="" />
+
+    <h4>2. Square image</h4>
+    <img class="square-image" src="./assets/image.png" alt="" />
+
+    <h4>3. Round image</h4>
+    <img class="round-image" src="./assets/image.png" alt="" />
+
+    <h4>4. Text box with rounded corners</h4>
+    <input class="corner-input" type="text" placeholder="Search" />
+
+    <h4>5. Text box with shadow and no border</h4>
+    <input
+      class="shadow-input"
+      type="text"
+      placeholder="Search Google or type a URL"
+    />
+
+    <h4>6. LinkedIn Signup</h4>
+    <p class="email">Email</p>
+    <input class="email-input" type="text" />
+    <p class="disclaimer">
+      By clicking Agree &amp; Join, you agree to the Privacy Policy.
+    </p>
+    <button class="linkedin-button">Agree &amp; Join</button>
+
+    <h4>6. Twitter text box</h4>
+    <img
+      class="twitter-profile"
+      src="./assets/image.png"
+      alt="twitter-profile"
+    />
+    <input class="post-input" type="text" placeholder="what's happening?" />
+    <button class="tweet-button">Tweet</button>
+  </body>
+</html>

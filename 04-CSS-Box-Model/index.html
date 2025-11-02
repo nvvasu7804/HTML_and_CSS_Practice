@@ -1,0 +1,177 @@
+<!-- Replacing Height and Width With Correct Padding and Margin -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Red "SUBSCRIBE" button */
+      .subscribe-button {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 2px;
+        background-color: rgb(179, 9, 9);
+        color: white;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: opacity 0.15s;
+      }
+
+      .subscribe-button:hover {
+        opacity: 0.8;
+      }
+
+      .subscribe-button:active {
+        opacity: 0.5;
+      }
+
+      /* Outlined blue "JOIN" button */
+      .join-button {
+        padding: 8px 14px;
+        background-color: white;
+        border: 2px solid rgb(21, 204, 255);
+        color: rgb(0, 120, 224);
+        border-radius: 2px;
+        margin-right: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.15s, color 0.15s;
+      }
+
+      .join-button:hover {
+        background-color: rgb(0, 120, 224);
+        color: white;
+      }
+
+      .join-button:active {
+        opacity: 0.8;
+      }
+
+      /* Rounded blue "Tweet" button */
+      .tweet-button {
+        padding: 8px 18px;
+        color: white;
+        font-weight: bold;
+        background-color: rgb(19, 125, 196);
+        border-radius: 20px;
+        border: none;
+        margin-right: 10px;
+        transition: box-shadow 0.15s;
+      }
+
+      .tweet-button:hover {
+        box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .pagination-button {
+        padding: 10px 16px;
+        border-width: 2px;
+        border-color: black;
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 16px;
+      }
+      .pagination-button:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      .back-button {
+        margin-right: 10px;
+      }
+
+      .next-button {
+        margin-left: 10px;
+      }
+
+      .page-numbers {
+        font-size: 18px;
+        padding: 5px;
+      }
+
+      .stretch-button {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-weight: 400;
+        font-size: 20px;
+        transition: font-size 0.5s, padding 0.5s;
+      }
+
+      .stretch-button:hover {
+        font-size: 12px;
+        padding: 20px 40px;
+      }
+
+      .shadow-button {
+        background-color: green;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        position: relative;
+        top: 0;
+        box-shadow: none;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      .shadow-button:hover {
+        box-shadow: 3px 3px 5px gray;
+      }
+
+      .shadow-button:active {
+        top: 3px;
+
+        box-shadow: none;
+      }
+
+      .serial-button {
+        background-color: green;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 3px;
+        position: relative;
+        top: 0;
+        box-shadow: none;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        margin-right: 40px;
+      }
+      .serial-button:hover {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="subscribe-button">SUBSCRIBE</button>
+    <button class="join-button">JOIN</button>
+    <button class="tweet-button">Tweet</button>
+
+    <h3>Practice Exercises</h3>
+    <div>
+      <h4>1. Pagination</h4>
+      <button class="pagination-button back-button">Back</button>
+      <a href="" class="page-numbers">1</a>
+      <a href="" class="page-numbers">2</a>
+      <a href="" class="page-numbers">3</a>
+      <a href="" class="page-numbers">4</a>
+      <a href="" class="page-numbers">5</a>
+      <button class="pagination-button next-button">Next</button>
+    </div>
+    <h4>2. Stretch</h4>
+    <button class="stretch-button">Stretch</button>
+
+    <h4>3. 3D Click</h4>
+    <button class="shadow-button">Shadow</button>
+
+    <h4>4. Margin and Padding Together</h4>
+    <button class="serial-button">One</button>
+    <button class="serial-button">Two</button>
+    <button class="serial-button">Three</button>
+  </body>
+</html>

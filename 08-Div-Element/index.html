@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Div Element</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .image {
+        height: 280px;
+      }
+
+      .y-search {
+        font-size: 18px;
+        display: block;
+      }
+      .video-card {
+        display: inline-block;
+        margin-right: 15px;
+      }
+
+      .twitter {
+        padding: 10px 10px;
+        border-radius: 7px;
+        width: 330px;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+      }
+      .twitter-profile {
+        height: 40px;
+        vertical-align: middle;
+        width: 40px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-right: 5px;
+      }
+
+      .post-input {
+        border: none;
+        width: 200px;
+        font-size: 15px;
+      }
+
+      .tweet-button {
+        background-color: #1da1f2;
+        padding: 6px 14px;
+        border: none;
+        border-radius: 20px;
+        font-weight: 400;
+        color: white;
+        cursor: pointer;
+      }
+
+      .add-friend {
+        display: inline-block;
+        width: 140px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+        margin-right: 4px;
+      }
+
+      .add-friend-card-img {
+        height: 160px;
+        width: 140px;
+        object-fit: cover;
+      }
+      .friend-user-name {
+        padding-left: 6px;
+        margin-top: 0px;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+      .mutual-friends {
+        padding-left: 6px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-bottom: 6px;
+      }
+      .add-friend-button {
+        margin-left: 6px;
+        margin-bottom: 6px;
+        color: white;
+        background-color: #1c45ff;
+        border: none;
+        border-radius: 4px;
+        padding: 4px 6px;
+      }
+
+      .google-logo,
+      .shadow-input {
+        margin: auto;
+      }
+      .google-logo {
+        width: 200px;
+        margin-bottom: 10px;
+      }
+      .shadow-input {
+        display: block;
+        width: 420px;
+        padding: 10px 0px 10px 10px;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      }
+      .google {
+        text-align: center;
+      }
+
+      .google-lower {
+        display: inline-block;
+        margin: 6px;
+      }
+
+      .google-lower p {
+        color: black;
+        background-color: rgb(235, 235, 235);
+        padding: 12px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <input class="y-search" type="text" placeholder="Search" />
+    <div class="video-card">
+      <img class="image" src="./assets/01.avif" alt="" />
+      <p>Data Engineer vs Data Analyst vs Data Scientist - which is better?</p>
+      <p>Lore So What</p>
+      <p>128K views &middot; 6 months ago</p>
+    </div>
+
+    <div class="video-card">
+      <img class="image" src="./assets/02.avif" alt="" />
+      <p>
+        FREE Web Design Course (2020): Introduction to Web Design | Episode 1
+      </p>
+      <p>Flux Academy</p>
+      <p>1.3M views &middot; 5 years ago</p>
+    </div>
+
+    <h3>Practice Exercises</h3>
+
+    <h4>1. Twitter text box</h4>
+    <div class="twitter">
+      <img
+        class="twitter-profile"
+        src="./assets/image.png"
+        alt="twitter-profile"
+      />
+      <input class="post-input" type="text" placeholder="what's happening?" />
+      <button class="tweet-button">Tweet</button>
+    </div>
+
+    <h4>2. Add Friend Card</h4>
+    <div class="add-friend">
+      <img class="add-friend-card-img" src="./assets/image.png" alt="" />
+      <p class="friend-user-name">Oliver</p>
+      <p class="mutual-friends">2 mutual friends</p>
+      <button class="add-friend-button">Add Friend</button>
+    </div>
+
+    <div class="add-friend">
+      <img class="add-friend-card-img" src="./assets/04.jpg" alt="" />
+      <p class="friend-user-name">Newton</p>
+      <p class="mutual-friends">10 mutual friends</p>
+      <button class="add-friend-button">Add Friend</button>
+    </div>
+
+    <div class="add-friend">
+      <img class="add-friend-card-img" src="./assets/05.jpg" alt="" />
+      <p class="friend-user-name">Scare</p>
+      <p class="mutual-friends">189 mutual friends</p>
+      <button class="add-friend-button">Add Friend</button>
+    </div>
+
+    <div class="add-friend">
+      <img class="add-friend-card-img" src="./assets/06.jfif" alt="" />
+      <p class="friend-user-name">Sweet</p>
+      <p class="mutual-friends">9 mutual friends</p>
+      <button class="add-friend-button">Add Friend</button>
+    </div>
+
+    <h4>3. Google Search</h4>
+    <div class="google">
+      <img class="google-logo" src="./assets/google.png" alt="Google Logo" />
+      <input
+        class="shadow-input"
+        type="text"
+        placeholder="Search Google or type a URL"
+      />
+      <div class="google-lower">
+        <p>Google Search</p>
+      </div>
+      <div class="google-lower">
+        <p>I'm Feeling Lucky</p>
+      </div>
+    </div>
+  </body>
+</html>

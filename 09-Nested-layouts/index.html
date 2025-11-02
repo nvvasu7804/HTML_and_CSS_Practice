@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested Layouts</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      p {
+        margin: 0px;
+      }
+      .image {
+        height: 280px;
+      }
+
+      .y-search {
+        font-size: 18px;
+        display: block;
+      }
+      .video-card {
+        display: inline-block;
+        margin-right: 15px;
+        vertical-align: top;
+      }
+      .video-details {
+        width: 100%;
+      }
+      .video-author {
+        display: inline-block;
+        vertical-align: top;
+        width: 50px;
+        margin-right: 10px;
+      }
+      .profile-picture {
+        width: 50px;
+        border-radius: 50px;
+      }
+      .video-info {
+        display: inline-block;
+        width: 440px;
+      }
+      .video-thumbnail {
+        margin-bottom: 10px;
+      }
+      .video-title {
+        font-weight: bold;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+      .channel-name {
+        color: gray;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      .video-stats {
+        font-size: 14px;
+        color: gray;
+      }
+      .h1 {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        line-height: 70px;
+      }
+
+      .h1 img {
+        vertical-align: middle;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+      }
+      .h2 {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: justify;
+        margin-right: 80px;
+      }
+      .v1,
+      .v2,
+      .v3 {
+        margin: 2px;
+        font-size: 14px;
+      }
+      .v1 {
+        /* margin-top: 2px; */
+        font-weight: bold;
+      }
+      .follow-button {
+        display: inline-block;
+      }
+
+      .follow-button button {
+        background-color: rgb(0, 51, 255);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+      }
+      .videoH1 {
+        width: 200px;
+        vertical-align: top;
+        display: inline-block;
+        margin-right: 5px;
+      }
+      .videoH1 img {
+        width: 100%;
+      }
+
+      .videoH2 {
+        width: 300px;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .videoH2 .p4-title {
+        font-weight: bold;
+        margin-bottom: 14px;
+      }
+
+      .videoH2 .p4-channel-name {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input class="y-search" type="text" placeholder="Search" />
+
+    <!-- video card 1 -->
+    <div class="video-card">
+      <div class="video-thumbnail">
+        <img class="image" src="./assets/01.avif" alt="" />
+      </div>
+      <div class="video-details">
+        <div class="video-author">
+          <img class="profile-picture" src="./profile-pics/01.jpg" alt="" />
+        </div>
+        <div class="video-info">
+          <p class="video-title">
+            Data Engineer vs Data Analyst vs Data Scientist - which is better?
+          </p>
+          <p class="channel-name">Lore So What</p>
+
+          <p class="video-stats">128K views &middot; 6 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- video card 2 -->
+    <div class="video-card">
+      <div class="video-thumbnail">
+        <img class="image" src="./assets/02.avif" alt="" />
+      </div>
+      <div class="video-details">
+        <div class="video-author">
+          <img class="profile-picture" src="./profile-pics/02.jpg" alt="" />
+        </div>
+        <div class="video-info">
+          <p class="video-title">
+            FREE Web Design Course (2020): Introduction to Web Design | Episode
+            1
+          </p>
+          <p class="channel-name">Flux Academy</p>
+
+          <p class="video-stats">1.3M views &middot; 5 years ago</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Practice Exercises -->
+    <h3>Practice Exercises</h3>
+
+    <h4>1. Profile Card</h4>
+    <div class="h1">
+      <img src="./profile-pics/02.jpg" alt="" />
+    </div>
+
+    <div class="h2">
+      <p class="v1">Flux</p>
+      <p class="v2">Youtuber</p>
+      <p class="v3">Content Creater</p>
+    </div>
+
+    <h4>2. Follow Card</h4>
+    <div class="h1">
+      <img src="./profile-pics/02.jpg" alt="" />
+    </div>
+
+    <div class="h2">
+      <p class="v1">Flux</p>
+      <p class="v2">Youtuber</p>
+      <p class="v3">Content Creater</p>
+    </div>
+
+    <div class="follow-button">
+      <button>Follow</button>
+    </div>
+
+    <h4>3. Multiple Follow Cards</h4>
+
+    <!-- first card -->
+    <div>
+      <div class="h1">
+        <img src="./profile-pics/02.jpg" alt="" />
+      </div>
+
+      <div class="h2">
+        <p class="v1">Flux</p>
+        <p class="v2">Youtuber</p>
+        <p class="v3">Content Creater</p>
+      </div>
+
+      <div class="follow-button">
+        <button>Follow</button>
+      </div>
+    </div>
+
+    <!-- Second card -->
+    <div>
+      <div class="h1">
+        <img src="./profile-pics/02.jpg" alt="" />
+      </div>
+
+      <div class="h2">
+        <p class="v1">Flux</p>
+        <p class="v2">Youtuber</p>
+        <p class="v3">Content Creater</p>
+      </div>
+
+      <div class="follow-button">
+        <button>Follow</button>
+      </div>
+    </div>
+
+    <!-- Third card -->
+    <div>
+      <div class="h1">
+        <img src="./profile-pics/02.jpg" alt="" />
+      </div>
+
+      <div class="h2">
+        <p class="v1">Flux</p>
+        <p class="v2">Youtuber</p>
+        <p class="v3">Content Creater</p>
+      </div>
+
+      <div class="follow-button">
+        <button>Follow</button>
+      </div>
+    </div>
+
+    <h4>4. Video Suggestions Layout</h4>
+    <!-- card 1 -->
+    <div style="margin-bottom: 6px">
+      <div class="videoH1">
+        <img src="./assets/01.avif" alt="" />
+      </div>
+      <div class="videoH2">
+        <p class="p4-title">
+          Data Engineer vs Data Analyst vs Data Scientist - which is better?
+        </p>
+
+        <p class="p4-channel-name">Lore So What</p>
+
+        <p class="p4-video-stats">128K views &middot; 6 months ago</p>
+      </div>
+    </div>
+
+    <!-- card 2 -->
+    <div style="margin-bottom: 6px">
+      <div class="videoH1">
+        <img src="./assets/02.avif" alt="" />
+      </div>
+      <div class="videoH2">
+        <p class="p4-title">
+          FREE Web Design Course (2020): Introduction to Web Design | Episode 1
+        </p>
+
+        <p class="p4-channel-name">Flux Academy</p>
+
+        <p class="p4-video-stats">128K views &middot; 6 months ago</p>
+      </div>
+    </div>
+
+    <!-- card 3 -->
+    <div style="margin-bottom: 6px">
+      <div class="videoH1">
+        <img src="./assets/01.avif" alt="" />
+      </div>
+      <div class="videoH2">
+        <p class="p4-title">
+          Data Engineer vs Data Analyst vs Data Scientist - which is better?
+        </p>
+
+        <p class="p4-channel-name">Lore So What</p>
+
+        <p class="p4-video-stats">128K views &middot; 6 months ago</p>
+      </div>
+    </div>
+  </body>
+</html>

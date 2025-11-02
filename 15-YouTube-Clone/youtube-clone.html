@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Clone</title>
+    <style>
+      /* ========== GLOBAL RESET ========== */
+      /* Removes default browser padding and margins */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Base font for the entire page */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* ========== VIDEO GRID LAYOUT ========== */
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 16px;
+        row-gap: 30px;
+        margin-left: 120px;
+        margin-top: 90px;
+        padding-top: 20px;
+        padding-right: 20px;
+      }
+
+      /* ========== RESPONSIVE DESIGN ========== */
+
+      /* --- Mobile View (Below 600px) --- */
+      /* Mobile View */
+      @media (max-width: 599px) {
+        .grid-container {
+          grid-template-columns: 1fr;
+          margin: 0 10px;
+        }
+        .sidebar-container {
+          display: none;
+        }
+        .navbar {
+          padding: 5px 10px;
+          justify-content: space-between;
+          gap: 5px;
+        }
+        .hamburger-icon,
+        .youtube-logo {
+          height: 18px;
+          margin: 0 5px;
+        }
+        .middle {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .middle .search-icon {
+          height: 30px;
+        }
+        .middle input {
+          height: 30px;
+        }
+        .voice-search-icon,
+        .upload-icon,
+        .youtube-icon {
+          display: none;
+        }
+        .right {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 15px;
+          flex: 0;
+          margin-left: auto;
+        }
+        .profile-pic {
+          height: 30px;
+        }
+      }
+      /* --- Tablet View (600px - 911px) --- */
+      @media (min-width: 600px) and (max-width: 911px) {
+        .grid-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* --- Large Desktop View (1240px and above) --- */
+      @media (min-width: 1240px) {
+        .grid-container {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+      }
+
+      /* ========== VIDEO CARD STYLING ========== */
+      .child {
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s;
+      }
+
+      /* Thumbnail image styling */
+      .video-thumbnail {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        margin-bottom: 6px;
+        border-radius: 10px 10px 0 0;
+      }
+
+      /* Layout for channel image + video info */
+      .video-details {
+        padding: 0px 2px;
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        column-gap: 10px;
+      }
+
+      /* Channel’s profile picture */
+      .profile-picture {
+        width: 100%;
+        border-radius: 50%;
+      }
+
+      /* Video title, channel name, and stats */
+      .video-info {
+        width: 100%;
+      }
+
+      .video-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .channel-name {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .video-stats {
+        font-size: 14px;
+        color: gray;
+      }
+
+      /* ========== NAVBAR STYLING ========== */
+      .navbar {
+        background-color: white;
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px 25px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgb(172, 172, 172);
+        transition: all 0.3s ease;
+      }
+
+      /* LEFT SECTION (hamburger + logo) */
+      .left {
+        display: flex;
+        align-items: center;
+      }
+
+      .hamburger-icon {
+        margin-left: 13px;
+        margin-right: 50px;
+      }
+
+      .left img {
+        height: 25px;
+        cursor: pointer;
+      }
+
+      /* MIDDLE SECTION (search bar + icons) */
+      .middle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+      }
+
+      .middle img {
+        height: 42px;
+        background-color: rgb(243, 243, 243);
+        padding: 8px;
+        cursor: pointer;
+      }
+
+      /* Search bar styling */
+      .middle input {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        border: 1px solid gray;
+        border-radius: 2px;
+        font-size: 18px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .middle input::placeholder {
+        font-size: 18px;
+        color: #666;
+      }
+
+      /* Search & mic icons */
+      .search-icon {
+        margin-left: -2px;
+        border: 1px solid gray;
+        border-radius: 2px;
+      }
+
+      .voice-search-icon {
+        margin-left: 10px;
+        border-radius: 50%;
+      }
+
+      /* RIGHT SECTION (upload, apps, notifications, profile) */
+      .right {
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 30px;
+        flex-shrink: 0;
+        padding-right: 10px;
+      }
+
+      .right img {
+        height: 35px;
+        cursor: pointer;
+      }
+
+      .right .profile-pic {
+        height: 40px;
+        border-radius: 20px;
+      }
+
+      /* ========== SIDEBAR STYLING ========== */
+      .sidebar-container {
+        background-color: white;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        width: 100px;
+        z-index: 300;
+      }
+
+      /* Individual sidebar links */
+      .sidebar-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        transition: background-color 0.15s;
+      }
+
+      .sidebar-link img {
+        height: 25px;
+      }
+
+      .sidebar-link p {
+        margin-top: 5px;
+        font-size: 10px;
+      }
+
+      /* Hover effect for sidebar items */
+      .sidebar-link:hover {
+        background-color: rgb(237, 237, 237);
+        cursor: pointer;
+      }
+
+      /* ========== INTERACTIONS & EFFECTS ========== */
+      /* Hover zoom for each video card */
+      .child:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Smooth scrolling behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <!-- =========== NAVIGATION BAR =========== -->
+      <div class="navbar">
+        <!-- LEFT SECTION (Menu + Logo) -->
+        <div class="left">
+          <!-- Hamburger menu icon (toggles sidebar in real YouTube) -->
+          <img
+            class="hamburger-icon"
+            src="./icons/hamburger-menu.svg"
+            alt="Menu"
+          />
+          <!-- YouTube logo -->
+          <img
+            class="youtube-logo"
+            src="./icons/youtube-logo.svg"
+            alt="YouTube Logo"
+          />
+        </div>
+
+        <!-- MIDDLE SECTION (Search Bar + Icons) -->
+        <div class="middle">
+          <!-- Search input field -->
+          <input type="text" placeholder="Search" />
+          <!-- Search button icon -->
+          <img class="search-icon" src="./icons/search.svg" alt="Search" />
+          <!-- Voice search icon (microphone) -->
+          <img
+            class="voice-search-icon"
+            src="./icons/voice-search-icon.svg"
+            alt="Voice Search"
+          />
+        </div>
+
+        <!-- RIGHT SECTION (Action Icons + Profile Picture) -->
+        <div class="right">
+          <!-- Upload video icon -->
+          <img class="upload-icon" src="./icons/upload.svg" alt="Upload" />
+          <!-- YouTube apps (grid icon) -->
+          <img class="youtube-icon" src="./icons/youtube-apps.svg" alt="Apps" />
+          <!-- Notifications (bell icon) -->
+          <img
+            class="notifications-icon"
+            src="./icons/notifications.svg"
+            alt="Notifications"
+          />
+          <!-- User profile picture -->
+          <img src="./profile-pics/nvv.png" alt="Profile" class="profile-pic" />
+        </div>
+      </div>
+      <!-- ========================= END NAVBAR ========================= -->
+
+      <!-- ========================= SIDEBAR MENU ========================= -->
+      <div class="sidebar-container">
+        <!-- Each block represents a sidebar navigation link -->
+        <div class="sidebar-link">
+          <img src="./icons/home.svg" alt="Home Icon" />
+          <p>Home</p>
+        </div>
+
+        <div class="sidebar-link">
+          <img src="./icons/explore.svg" alt="Explore Icon" />
+          <p>Explore</p>
+        </div>
+
+        <div class="sidebar-link">
+          <img src="./icons/subscriptions.svg" alt="Subscriptions Icon" />
+          <p>Subscriptions</p>
+        </div>
+
+        <div class="sidebar-link">
+          <img src="./icons/originals.svg" alt="Originals Icon" />
+          <p>Originals</p>
+        </div>
+
+        <div class="sidebar-link">
+          <img src="./icons/youtube-music.svg" alt="Music Icon" />
+          <p>Music</p>
+        </div>
+
+        <div class="sidebar-link">
+          <img src="./icons/library.svg" alt="Library Icon" />
+          <p>Library</p>
+        </div>
+      </div>
+      <!-- ========================= END SIDEBAR ========================= -->
+
+      <!-- ========================= MAIN VIDEO GRID ========================= -->
+      <div class="grid-container">
+        <!-- Each "child" div below represents a single video card -->
+
+        <!-- ========== CARD 1 ========== -->
+        <div class="child">
+          <!-- Thumbnail image -->
+          <img
+            class="video-thumbnail"
+            src="./assets/01.avif"
+            alt="Video Thumbnail"
+          />
+
+          <!-- Channel & video info container -->
+          <div class="video-details">
+            <!-- Channel profile image -->
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/01.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+
+            <!-- Video title, channel name, and stats -->
+            <div class="video-info">
+              <p class="video-title">
+                Data Engineer vs Data Analyst vs Data Scientist - which is
+                better?
+              </p>
+              <p class="channel-name">Lore So What</p>
+              <p class="video-stats">128K views · 6 months ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 2 ========== -->
+        <div class="child">
+          <img
+            class="video-thumbnail"
+            src="./assets/02.jpg"
+            alt="Video Thumbnail"
+          />
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/02.png"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">Lose My Mind - (F1: The Movie)</p>
+              <p class="channel-name">Sann1e</p>
+              <p class="video-stats">1.5M views · 1 month ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 3 ========== -->
+        <div class="child">
+          <img
+            class="video-thumbnail"
+            src="./assets/03.jpg"
+            alt="Video Thumbnail"
+          />
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/03.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">Can We Make It Transparent?</p>
+              <p class="channel-name">Phone Repair Guru</p>
+              <p class="video-stats">1.1M views · 11 days ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 4 ========== -->
+        <div class="child">
+          <img
+            class="video-thumbnail"
+            src="./assets/04.jpg"
+            alt="Video Thumbnail"
+          />
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/04.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                HTML & CSS Full Course - Beginner to Pro
+              </p>
+              <p class="channel-name">SuperSimpleDev</p>
+              <p class="video-stats">17M views · 3 years ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 5 ========== -->
+        <div class="child">
+          <img
+            class="video-thumbnail"
+            src="./assets/05.jpg"
+            alt="Video Thumbnail"
+          />
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/05.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                Product Packaging and Ads Poster Design in Canva | Logo &
+                Package Design | Full Process
+              </p>
+              <p class="channel-name">GraFeeXa</p>
+              <p class="video-stats">503k views · 2 years ago</p>
+            </div>
+          </div>
+        </div>
+        <!-- ========== CARD 6 ========== -->
+        <div class="child">
+          <!-- Video thumbnail -->
+          <img
+            class="video-thumbnail"
+            src="./assets/07.jpg"
+            alt="Video Thumbnail"
+          />
+
+          <!-- Channel & video details -->
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/07.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+
+            <div class="video-info">
+              <p class="video-title">
+                The Biggest Windows Update for 2025 is Here!
+              </p>
+              <p class="channel-name">Sillycorns</p>
+              <p class="video-stats">352k views · 3 weeks ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 7 ========== -->
+        <div class="child">
+          <img
+            class="video-thumbnail"
+            src="./assets/08.jpg"
+            alt="Video Thumbnail"
+          />
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/08.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">Build a Python AI Agent in 10 Minutes</p>
+              <p class="channel-name">Tech With Tim</p>
+              <p class="video-stats">24k views · 1 day ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 8 ========== -->
+        <div class="child">
+          <img
+            class="video-thumbnail"
+            src="./assets/09.jpg"
+            alt="Video Thumbnail"
+          />
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/09.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">Python Functions: Visually Explained</p>
+              <p class="channel-name">Visually Explained</p>
+              <p class="video-stats">123k views · 6 months ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 9 ========== -->
+        <div class="child">
+          <img
+            class="video-thumbnail"
+            src="./assets/10.jpg"
+            alt="Video Thumbnail"
+          />
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/10.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">iQOO 15 is a Beast But...</p>
+              <p class="channel-name">Trakin Tech English</p>
+              <p class="video-stats">53k views · 22 hours ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 10 ========== -->
+        <div class="child">
+          <img
+            class="video-thumbnail"
+            src="./assets/11.jpg"
+            alt="Video Thumbnail"
+          />
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/11.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                Why Is This CSS Overlap So Hard?! CSS Battle
+              </p>
+              <p class="channel-name">Syntax</p>
+              <p class="video-stats">22k views · 1 month ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 11 (with YouTube link) ========== -->
+        <div class="child">
+          <!-- Clickable thumbnail linking to YouTube video -->
+          <a href="https://www.youtube.com/watch?v=vevKLZHbyM4" target="_blank">
+            <img
+              class="video-thumbnail"
+              src="./assets/12.jpg"
+              alt="Video Thumbnail"
+            />
+          </a>
+
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/12.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">Overview of AI for Beginners (2025)</p>
+              <p class="channel-name">SuperSimpleDev</p>
+              <p class="video-stats">13k views · 3 weeks ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 12 (with YouTube link) ========== -->
+        <div class="child">
+          <a href="https://www.youtube.com/watch?v=Je_KYIM9QJc" target="_blank">
+            <img
+              class="video-thumbnail"
+              src="./assets/13.jpg"
+              alt="Video Thumbnail"
+            />
+          </a>
+
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/13.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                How To Become a Full Stack Developer in 2025 - Full Roadmap
+              </p>
+              <p class="channel-name">Tech With Tim</p>
+              <p class="video-stats">37k views · 1 month ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 13 (with YouTube link) ========== -->
+        <div class="child">
+          <a href="https://www.youtube.com/watch?v=L3iD_fiwvLI" target="_blank">
+            <img
+              class="video-thumbnail"
+              src="./assets/14.jpg"
+              alt="Video Thumbnail"
+            />
+          </a>
+
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/14.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                Don't Become a Data Analyst (Do THIS Instead)
+              </p>
+              <p class="channel-name">
+                Kedeisha Bryan - Your Data Career Coach
+              </p>
+              <p class="video-stats">70k views · 4 weeks ago</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== CARD 14 (with YouTube link) ========== -->
+        <div class="child">
+          <a href="https://www.youtube.com/watch?v=3elGSZSWTbM" target="_blank">
+            <img
+              class="video-thumbnail"
+              src="./assets/15.jpg"
+              alt="Video Thumbnail"
+            />
+          </a>
+
+          <div class="video-details">
+            <div class="channel-profile-picture">
+              <img
+                class="profile-picture"
+                src="./profile-pics/15.jpg"
+                alt="Channel Profile"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">Flexbox or Grid - How to Decide?</p>
+              <p class="channel-name">Kevin Powell</p>
+              <p class="video-stats">804k views · 3 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========================= END VIDEO GRID ========================= -->
+    </body>
+  </body>
+</html>

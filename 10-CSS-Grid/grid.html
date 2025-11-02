@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 16px;
+        row-gap: 30px;
+      }
+      .child {
+        border-radius: 10px;
+        /* background-color: gray; */
+      }
+      .video-thumbnail {
+        width: 100%;
+
+        border-radius: 10px 10px 0px 0px;
+      }
+      .video-details {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        column-gap: 10px;
+      }
+      .profile-picture {
+        width: 100%;
+        border-radius: 50px;
+      }
+      .video-info {
+        width: 100%;
+      }
+      .video-title {
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+      }
+      .channel-name {
+        margin: 5px 0px 5px;
+      }
+      .video-stats {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <!-- card 1 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/01.avif" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/01.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Data Engineer vs Data Analyst vs Data Scientist - which is better?
+            </p>
+            <p class="channel-name">Lore So What</p>
+            <p class="video-stats">128K views &middot; 6 months ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/02.jpg" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/02.png" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">Lose My Mind - (F1: The Movie)</p>
+            <p class="channel-name">Sann1e</p>
+            <p class="video-stats">1.5M views &middot; 1 month ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/03.jpg" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/03.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">Can We Make It Transparent?</p>
+            <p class="channel-name">Phone Repair Guru</p>
+            <p class="video-stats">1.1M views &middot; 11 days ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 4 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/04.jpg" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/04.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">HTML & CSS Full Course - Beginner to Pro</p>
+            <p class="channel-name">SuperSimpleDev</p>
+            <p class="video-stats">17M views &middot; 3 years ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 5 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/05.jpg" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/05.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Product Packaging and Ads Poster Design in Canva | Logo & Package
+              Design | Full Process
+            </p>
+            <p class="channel-name">GraFeeXa</p>
+            <p class="video-stats">503k views &middot; 2 years ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 6 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/07.jpg" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/07.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              The Biggest Windows Update for 2025 is Here!
+            </p>
+            <p class="channel-name">Sillycorns</p>
+            <p class="video-stats">352k views &middot; 3 weeks ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 7 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/08.jpg" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/08.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">Build a Python AI Agent in 10 Minutes</p>
+            <p class="channel-name">Tech With Tim</p>
+            <p class="video-stats">24k views &middot; 1 day ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 8 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/09.jpg" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/09.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">Python Functions: Visually Explained</p>
+            <p class="channel-name">Visually Explained</p>
+            <p class="video-stats">123k views &middot; 6 months ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 9 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/01.avif" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/01.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+              omnis natus corporis dicta expedita repellat.
+            </p>
+            <p class="channel-name">How are you</p>
+            <p class="video-stats">12k views ~ 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 10 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/01.avif" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/01.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+              omnis natus corporis dicta expedita repellat.
+            </p>
+            <p class="channel-name">How are you</p>
+            <p class="video-stats">12k views ~ 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 11 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/01.avif" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/01.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+              omnis natus corporis dicta expedita repellat.
+            </p>
+            <p class="channel-name">How are you</p>
+            <p class="video-stats">12k views ~ 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 12 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/01.avif" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/01.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+              omnis natus corporis dicta expedita repellat.
+            </p>
+            <p class="channel-name">How are you</p>
+            <p class="video-stats">12k views ~ 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 13 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/01.avif" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/01.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+              omnis natus corporis dicta expedita repellat.
+            </p>
+            <p class="channel-name">How are you</p>
+            <p class="video-stats">12k views ~ 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 14 -->
+      <div class="child">
+        <img class="video-thumbnail" src="./assets/01.avif" alt="" />
+        <div class="video-details">
+          <div class="channel-profile-picture">
+            <img class="profile-picture" src="./profile-pics/01.jpg" alt="" />
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+              omnis natus corporis dicta expedita repellat.
+            </p>
+            <p class="channel-name">How are you</p>
+            <p class="video-stats">12k views ~ 1 year ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

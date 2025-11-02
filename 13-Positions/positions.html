@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positions</title>
+    <style>
+      * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    </style>
+  </head>
+  <body style="height: 3000px; padding-top: 60px; padding-left: 80px">
+    <div
+      style="
+        background-color: black;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+      "
+    >
+      Header
+    </div>
+
+    <div
+      style="
+        background-color: green;
+        color: white;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        top: 50px;
+        width: 72px;
+      "
+    >
+      Left sidebar
+    </div>
+
+    <div
+      style="
+        background-color: green;
+        color: white;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        top: 50px;
+        width: 72px;
+      "
+    >
+      Right sidebar
+    </div>
+
+    <div
+      style="
+        background-color: lightblue;
+        height: 200px;
+        width: 200px;
+        position: static;
+      "
+    >
+      div 1
+    </div>
+
+    <div style="background-color: lightpink; height: 200px; width: 200px">
+      div 2
+    </div>
+
+    <div
+      style="
+        background-color: black;
+        color: white;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      "
+    >
+      Bottom Right
+    </div>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+      "
+    >
+      <div
+        style="
+          background-color: white;
+          padding: 10px;
+          border-radius: 8px;
+          width: 250px;
+        "
+      >
+        <p style="margin: 0px; font-weight: bold">Modal Tile</p>
+        <p>This is a model</p>
+        <button>Close</button>
+      </div>
+    </div>
+  </body>
+</html>

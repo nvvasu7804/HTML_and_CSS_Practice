@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positions Practice</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 100px;
+        height: 3000px;
+      }
+
+      .header-container {
+        background-color: #fff;
+        border: 1px solid #cbcbcb;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 100px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        left: 10px;
+      }
+
+      .left-side {
+        display: flex;
+        gap: 10px;
+      }
+
+      .left-side img {
+        height: 50px;
+      }
+
+      .left-side p {
+        font-weight: bold;
+      }
+
+      .right-side {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn-add {
+        background-color: rgb(0, 0, 223);
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+      }
+
+      .btn-message {
+        background-color: rgb(225, 225, 225);
+        border: none;
+        border-radius: 4px;
+        color: black;
+        font-weight: bold;
+        padding: 10px 14px;
+      }
+
+      .double-sidebar {
+        display: flex;
+        align-items: flex-start;
+        position: fixed;
+        top: 100px;
+        bottom: 10px;
+      }
+
+      .first-sidebar {
+        width: 60px;
+        position: fixed;
+        top: 100px;
+        bottom: 10px;
+        padding: 10px;
+        background-color: rgb(88, 88, 88);
+      }
+
+      .first-sidebar img {
+        height: 50px;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .second-sidebar {
+        padding: 10px;
+        background-color: rgb(63, 63, 63);
+        position: fixed;
+        top: 100px;
+        bottom: 10px;
+        left: 80px;
+      }
+
+      .second-sidebar .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      .second-sidebar .header p:first-child {
+        margin-top: 0;
+        color: rgb(234, 234, 234);
+        font-size: 12px;
+      }
+
+      .second-sidebar .header p:last-child {
+        margin-top: 0;
+        color: gray;
+        font-size: 14px;
+      }
+
+      .second-sidebar .options {
+        color: gray;
+      }
+
+      .second-sidebar .options p {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <div class="left-side">
+        <img
+          src="../12-Nested-Flexbox/profile-pics/dummy-profile-pic.svg"
+          alt=""
+        />
+        <p>Oliver Cat</p>
+      </div>
+      <div class="right-side">
+        <button class="btn-add">Add Friend</button>
+        <button class="btn-message">Message</button>
+      </div>
+    </div>
+
+    <div class="double-sidebar">
+      <div class="first-sidebar">
+        <img
+          src="../12-Nested-Flexbox/profile-pics/dummy-profile-pic.svg"
+          alt=""
+        />
+        <img
+          src="../12-Nested-Flexbox/profile-pics/dummy-profile-pic.svg"
+          alt=""
+        />
+        <img
+          src="../12-Nested-Flexbox/profile-pics/dummy-profile-pic.svg"
+          alt=""
+        />
+      </div>
+
+      <div class="second-sidebar">
+        <div class="header">
+          <p>INFO</p>
+          <p>+</p>
+        </div>
+        <div class="options">
+          <p># new-videos</p>
+          <p># updates</p>
+          <p># faq</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

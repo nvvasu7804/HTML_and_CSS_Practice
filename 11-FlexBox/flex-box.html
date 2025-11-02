@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box</title>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .main-container {
+        border: 2px;
+
+        display: grid;
+        display: inline-block;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 10px;
+        border-color: gray;
+      }
+      .child {
+        padding: 10px;
+        display: flex;
+        width: 350px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .child p {
+        margin: 0px;
+      }
+      .count {
+        background-color: blue;
+        color: white;
+        border-radius: 15px;
+        padding: 4px 14px;
+        font-weight: bold;
+      }
+
+      .p7 {
+        width: 350px;
+        padding: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .p7-image {
+        display: flex;
+        flex: 1;
+        margin-right: 10px;
+        align-items: center;
+      }
+
+      .p7-image img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .p7-text {
+        flex: 3;
+        margin-right: 10px;
+      }
+      .p7-text p {
+        margin: 0px;
+      }
+
+      .p7-text .username {
+        font-weight: bold;
+      }
+
+      .follow-button {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .follow-button button {
+        border: none;
+        color: white;
+        background-color: rgb(0, 123, 255);
+        padding: 8px 13px;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      .navbar {
+        background-color: rgb(136, 0, 255);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        height: 50px;
+      }
+
+      .left {
+        color: white;
+        font-weight: bold;
+        width: 100px;
+      }
+      .middle {
+        max-width: 1000px;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+      }
+      .middle input {
+        width: 100%;
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 50px;
+        border: none;
+      }
+      .right {
+        display: flex;
+        justify-content: end;
+        width: 140px;
+      }
+      .right button {
+        color: white;
+        font-size: 16x;
+        background-color: rgb(136, 0, 255);
+        border: solid white;
+        border-width: 1px;
+        padding: 8px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1st one -->
+    <div style="display: flex; flex-direction: row">
+      <div style="background-color: aqua">div 1 text</div>
+      <div style="background-color: burlywood">
+        div 2
+        <p>text</p>
+      </div>
+    </div>
+
+    <!-- 2nd one -->
+    <div style="display: flex; flex-direction: row; margin-top: 30px">
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; flex: 1">Flex</div>
+    </div>
+
+    <!-- 3rd one -->
+    <div style="display: flex; flex-direction: row; margin-top: 30px">
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; flex: 1">Flex 1</div>
+
+      <div style="background-color: aqua; flex: 2">Flex 2</div>
+    </div>
+
+    <!-- 4th one -->
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 80px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(255, 0, 0);
+        justify-content: center;
+      "
+    >
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; width: 100px">100px</div>
+
+      <div style="background-color: aqua; width: 100px">100px</div>
+    </div>
+
+    <!-- 5th one -->
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 80px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(255, 0, 0);
+        justify-content: space-around;
+      "
+    >
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; width: 100px">100px</div>
+
+      <div style="background-color: aqua; width: 100px">100px</div>
+    </div>
+
+    <!-- 6th one -->
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 80px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(255, 0, 0);
+        justify-content: space-between;
+      "
+    >
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; width: 100px">100px</div>
+
+      <div style="background-color: aqua; width: 100px">100px</div>
+    </div>
+
+    <!-- 7th one -->
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 80px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(255, 0, 0);
+        justify-content: space-evenly;
+      "
+    >
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; width: 100px">100px</div>
+
+      <div style="background-color: aqua; width: 100px">100px</div>
+    </div>
+
+    <!-- 8th one -->
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 80px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(255, 0, 0);
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+      "
+    >
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; width: 100px">100px</div>
+
+      <div style="background-color: aqua; width: 100px">100px</div>
+    </div>
+
+    <!-- practice exercises -->
+    <h3>Practice Exercises</h3>
+    <h4>1.</h4>
+    <div
+      style="display: flex; flex-direction: row; margin-top: 30px; height: 80px"
+    >
+      <div style="background-color: burlywood; width: 200px">200px</div>
+
+      <div style="background-color: aqua; width: 75px">75px</div>
+    </div>
+
+    <h4>2.</h4>
+    <div
+      style="display: flex; flex-direction: row; margin-top: 30px; height: 80px"
+    >
+      <div style="background-color: aqua; width: 50px">50px</div>
+
+      <div style="background-color: burlywood; flex: 1">Flex 1</div>
+
+      <div style="background-color: aqua; width: 75px">75px</div>
+    </div>
+
+    <h4>3.</h4>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 80px;
+        justify-content: space-between;
+      "
+    >
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; width: 100px">100px</div>
+
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; width: 100px">100px</div>
+    </div>
+
+    <h4>5.</h4>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        height: 80px;
+        border-width: 2px;
+        border-style: solid;
+        align-items: center;
+        justify-content: space-between;
+      "
+    >
+      <div style="background-color: aqua; width: 100px">100px</div>
+
+      <div style="background-color: burlywood; width: 100px">100px</div>
+    </div>
+
+    <h4>6.</h4>
+    <div class="main-container">
+      <div class="child">
+        <p>Home</p>
+        <p class="count">14</p>
+      </div>
+
+      <div class="child">
+        <p>Notifications</p>
+        <p class="count">3</p>
+      </div>
+
+      <div class="child">
+        <p>Messages</p>
+        <p class="count">5</p>
+      </div>
+    </div>
+
+    <h4>7.</h4>
+    <div class="p7">
+      <div class="p7-image">
+        <img src="../06-Images-Text-Boxes/assets/image.png" alt="" />
+      </div>
+      <div class="p7-text">
+        <div class="username"><p>Oliver</p></div>
+        <div class="nickname"><p>the cat</p></div>
+        <div class="tagline"><p>Popular</p></div>
+      </div>
+      <div class="follow-button">
+        <button>Follow</button>
+      </div>
+    </div>
+    <div class="p7">
+      <div class="p7-image">
+        <img src="../06-Images-Text-Boxes/assets/image.png" alt="" />
+      </div>
+      <div class="p7-text">
+        <div class="username"><p>Oliver</p></div>
+        <div class="nickname"><p>the cat</p></div>
+        <div class="tagline"><p>Popular</p></div>
+      </div>
+      <div class="follow-button">
+        <button>Follow</button>
+      </div>
+    </div>
+    <div class="p7">
+      <div class="p7-image">
+        <img src="../06-Images-Text-Boxes/assets/image.png" alt="" />
+      </div>
+      <div class="p7-text">
+        <div class="username"><p>Oliver</p></div>
+        <div class="nickname"><p>the cat</p></div>
+        <div class="tagline"><p>Popular</p></div>
+      </div>
+      <div class="follow-button">
+        <button>Follow</button>
+      </div>
+    </div>
+
+    <h4>8.</h4>
+    <div class="navbar">
+      <div class="left">Home</div>
+      <div class="middle"><input type="text" placeholder="Search" /></div>
+      <div class="right"><button>Download</button></div>
+    </div>
+  </body>
+</html>
