@@ -135,7 +135,7 @@ Here are some examples:
 ## 🖼️ Output Preview
 
 ![CSS1](https://github.com/nvvasu7804/HTML_and_CSS_Practice/blob/9c9abd34d70702adc7f94a73d98bd949c8e68945/02-CSS-Basics/21.png)
-![CSS2]([./screenshot.png](https://github.com/nvvasu7804/HTML_and_CSS_Practice/blob/9c9abd34d70702adc7f94a73d98bd949c8e68945/02-CSS-Basics/22.png))
+![CSS2](https://github.com/nvvasu7804/HTML_and_CSS_Practice/blob/9c9abd34d70702adc7f94a73d98bd949c8e68945/02-CSS-Basics/22.png)
 
 
 ---
