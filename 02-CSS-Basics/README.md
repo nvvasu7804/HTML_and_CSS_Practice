@@ -11,7 +11,7 @@ It’s a great hands-on exercise to understand how **CSS properties** modify the
 ---
 
 ---
-## LINKEDIN LINK - [CLick Here To see The Demo]([https://www.linkedin.com/posts/venkata-vasu-nallamekala_webdevelopment-html-frontend-activity-7388084469741785089-1lrP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEqsHQsBBlOiEiJbGFjSZmYH4ot5V-GtPXo](https://www.linkedin.com/posts/venkata-vasu-nallamekala_css-webdevelopment-frontend-activity-7388129775162359808-6bYu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEqsHQsBBlOiEiJbGFjSZmYH4ot5V-GtPXo))
+## LINKEDIN LINK - [CLick Here To see The Demo](https://www.linkedin.com/posts/venkata-vasu-nallamekala_css-webdevelopment-frontend-activity-7388129775162359808-6bYu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEqsHQsBBlOiEiJbGFjSZmYH4ot5V-GtPXo)
 ---
 
 ## 🧠 Project Overview
